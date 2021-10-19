@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
       home: AppBar(
         title: (Text('ahmed tarek')),
       ),
-      routes: {
+     // routes: {
 
-      },
+     // },
 
     );
   }
