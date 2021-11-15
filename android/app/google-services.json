@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "713348496915",
+    "project_id": "warsha-cea67",
+    "storage_bucket": "warsha-cea67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713348496915:android:356b633b3d0e50645249e6",
+        "android_client_info": {
+          "package_name": "com.example.warsha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713348496915-kaofuede3anksps3nno3i5r8q1rel10f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiYFO5C0VtkTT-EGCs3wodTuLWoP0L6wU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713348496915-kaofuede3anksps3nno3i5r8q1rel10f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

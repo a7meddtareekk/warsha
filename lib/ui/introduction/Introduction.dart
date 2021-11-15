@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:warsha/main.dart';
-import 'package:warsha/ui/Registeration.dart';
+import 'package:warsha/AppProvider.dart';
+
+import 'package:warsha/ui/Registeration/Registeration.dart';
 
 class Introduction extends StatefulWidget {
   static final ROUTE_NAME = 'Introduction';
@@ -11,8 +12,8 @@ class Introduction extends StatefulWidget {
 }
 
 class _IntroductionState extends State<Introduction> {
-  int currentPage = 0;
-  PageController _controller;
+    int currentPage = 0;
+ late  PageController ?  _controller;
 
   @override
   void initState() {
@@ -22,7 +23,7 @@ class _IntroductionState extends State<Introduction> {
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 
@@ -58,6 +59,13 @@ class _IntroductionState extends State<Introduction> {
                           padding: EdgeInsets.all(15),
                           margin: EdgeInsets.all(55),
                           decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.3),
+                                blurRadius: 15,
+                                spreadRadius: 5,
+                              )
+                            ],
                               color: Color.fromARGB(255, 255, 255, 255),
                               borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(80),
@@ -72,8 +80,8 @@ class _IntroductionState extends State<Introduction> {
                             },
                             itemBuilder: (context, index) =>
                                 introductionContent(
-                              image: introdata[index]["image"],
-                              text: introdata[index]["text"],
+                              image: introdata[index]["image"]!,
+                              text: introdata[index]["text"]!,
                             ),
                           ))),
                   Expanded(
@@ -92,7 +100,7 @@ class _IntroductionState extends State<Introduction> {
                               if ( currentPage == introdata.length -1 ){
                                 Navigator.push(context, MaterialPageRoute(builder: (_)=>Registeration()));
                               }
-                              _controller.nextPage(duration: Duration(milliseconds: 100), curve: Curves.bounceIn);
+                              _controller!.nextPage(duration: Duration(milliseconds: 100), curve: Curves.bounceIn);
                             },
                           ),
                         ],
@@ -104,7 +112,7 @@ class _IntroductionState extends State<Introduction> {
     );
   }
 
-  AnimatedContainer BuildDot({int index}) {
+  AnimatedContainer BuildDot({ required int index}) {
     return AnimatedContainer(
       duration: kThemeAnimationDuration,
       margin: EdgeInsets.only(right: 5),
@@ -119,12 +127,12 @@ class _IntroductionState extends State<Introduction> {
 }
 
 class introductionContent extends StatelessWidget {
-  const introductionContent({
-    Key key,
-    this.text,
-    this.image,
+   introductionContent({
+      Key? key,
+    required  this.text,
+    required this.image,
   }) : super(key: key);
-  final String text, image;
+  late String text, image;
 
   @override
   Widget build(BuildContext context) {
@@ -156,13 +164,13 @@ class introductionContent extends StatelessWidget {
 }
 
 class defultButton extends StatelessWidget {
-  const defultButton({
-    Key key,
-    this.text,
-    this.press,
+    defultButton({
+     Key? key,
+    required this.text,
+    required this.press,
   }) : super(key: key);
-  final String text;
-  final Function press;
+  late String text;
+   Function? press;
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +185,7 @@ class defultButton extends StatelessWidget {
               topLeft: Radius.circular(80),
             )),
             color: MyThemeData.MainColor,
-            onPressed: press,
+            onPressed: (){press!();},
             child: Text(
               text,
               style: TextStyle(color: Colors.white),

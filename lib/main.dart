@@ -1,14 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:warsha/ui/Introduction.dart';
+import 'package:provider/provider.dart';
+import 'package:warsha/AppProvider.dart';
+import 'package:warsha/Home/HomeScreen.dart';
+import 'package:warsha/ui/Registeration/buildSignInScreen.dart';
+import 'package:warsha/ui/Registeration/buildSignUpScreen.dart';
+import 'package:warsha/ui/introduction/Introduction.dart';
 
-class MyThemeData {
-  static var DarkGreen = Color.fromRGBO(20, 58, 65, 1.0);
-  static var BackgroundColor = Color.fromRGBO(238, 238, 238, 1.0);
-  static var Black = Color.fromRGBO(14, 14, 14, 1.0);
-  static var MainColor = Color.fromRGBO(255, 146, 97, 1.0);
-}
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+await Firebase.initializeApp();
 
-void main() {
   runApp(MyApp());
 }
 
@@ -16,15 +18,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: AppBar(
-        title: (Text('ahmed tarek')),
-      ),
-     routes: {
-       Introduction.ROUTE_NAME: (context) => Introduction(),
-      },
-      initialRoute: Introduction.ROUTE_NAME,
+    return ChangeNotifierProvider(
+      create: (context)=>AppProvider(),
+      builder: (context,widget){
+        return MaterialApp(
+          home: AppBar(
+            title: (Text('ahmed tarek')),
+          ),
+          routes: {
+            Introduction.ROUTE_NAME: (context) => Introduction(),
+            buildSignInScreen.ROUTE_NAME: (context) => buildSignInScreen(),
+            buildSignUpScreen.ROUTE_NAME: (context) => buildSignUpScreen(),
+            HomeScreen.ROUTE_NAME: (context) => HomeScreen(),
+          },
+          initialRoute: Introduction.ROUTE_NAME,
 
+        );
+      },
     );
   }
 }
