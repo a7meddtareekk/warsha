@@ -3,10 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:warsha/AppProvider.dart';
+import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/DatabaseHelper/DataBaseHelper.dart';
-import 'package:warsha/Home/HomeScreen.dart';
-import 'package:warsha/model/User.dart' as MyUser;
+import 'package:warsha/Home/HomeScreen/HomeScreen.dart';
+import 'package:warsha/Home/Home.dart';
+import 'package:warsha/Models/User.dart' as MyUser;
 
 
 import '../../main.dart';
@@ -225,7 +226,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
     .get()
            .then((retrievedUser){
              provider.updateUser(retrievedUser.data());
-             Navigator.pushReplacementNamed(context, HomeScreen.ROUTE_NAME);
+             Navigator.pushReplacementNamed(context, Home.ROUTE_NAME);
        });
       }
     }
@@ -233,7 +234,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
     on FirebaseAuthException catch (e) {
       showErrorMessage(e.message ?? '');
     } catch(e){
-      showErrorMessage(e.toString()??'');
+     // showErrorMessage(e.toString()??'');
     }
   }
   void showErrorMessage(String message) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:warsha/model/User.dart';
+import 'package:warsha/Models/User.dart';
 
 class MyThemeData {
   static var DarkGreen = Color.fromRGBO(20, 58, 65, 1.0);

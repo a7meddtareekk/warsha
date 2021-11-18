@@ -2,10 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:warsha/AppProvider.dart';
+import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/DatabaseHelper/DataBaseHelper.dart';
-import 'package:warsha/Home/HomeScreen.dart';
-import 'package:warsha/model/User.dart'as MyUser;
+import 'package:warsha/Home/HomeScreen/HomeScreen.dart';
+import 'package:warsha/Home/Home.dart';
+import 'package:warsha/Models/User.dart'as MyUser;
 import 'package:warsha/ui/Registeration/buildSignInScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -266,7 +267,7 @@ void RegisterUser()async{
         .set(user)
         .then((value) {
       provider.updateUser(user);
-      Navigator.of(context).pushReplacementNamed(HomeScreen.ROUTE_NAME);
+      Navigator.of(context).pushReplacementNamed(Home.ROUTE_NAME);
     });
 
 
@@ -276,7 +277,7 @@ void RegisterUser()async{
     else if(e.code=='email-already-in-use'){
       showErrorMessage(e.message??'');
     }}catch(e){
-    showErrorMessage(e.toString()?? '');
+    //showErrorMessage(e.toString()?? '');
     // if (e.code == 'weak-password') {
     //   print('The password provided is too weak.');
     // } else if (e.code == 'email-already-in-use') {

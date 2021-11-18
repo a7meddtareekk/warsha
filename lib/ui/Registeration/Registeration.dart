@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../AppProvider.dart';
+import '../../Models/AppProvider.dart';
 import 'buildSignInScreen.dart';
 import 'buildSignUpScreen.dart';
 

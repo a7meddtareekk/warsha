@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:warsha/model/User.dart';
+import 'package:warsha/Models/User.dart';
 
 CollectionReference<User> getUserCollectionWithConverter(){
   return FirebaseFirestore.instance.collection(User.COLLECTION_NAME).withConverter<User>(

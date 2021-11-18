@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:warsha/AppProvider.dart';
+import 'package:warsha/Models/AppProvider.dart';
 
 import 'package:warsha/ui/Registeration/Registeration.dart';
 
