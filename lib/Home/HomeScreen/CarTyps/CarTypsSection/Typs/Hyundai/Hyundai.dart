@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:warsha/Home/HomeScreen/CarTyps/CarTypsSection/CarTypsSection.dart';
-import 'package:warsha/Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/Bosches.dart';
+import 'package:warsha/Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/IridiumSparkPlugs.dart';
 import 'package:warsha/Items/CarPartsItem.dart';
 import 'package:warsha/Models/AppProvider.dart';
 
@@ -49,7 +49,7 @@ class Hyundai extends StatelessWidget {
                   children: [
                     CarPartsItem(
                       imagePath: 'assets/images/bosches.png',
-                      text: 'Bosches',
+                      text: 'Iridium Spark plugs',
                       textPartType: 'Hyundai accent',
                       textPrize: '150 EG',
                       imageHeight: 100,
@@ -57,7 +57,7 @@ class Hyundai extends StatelessWidget {
                       boxHeight: 140,
                       boxWidth: 140,
                       sizebox: 30,
-                      press: () {Navigator.pushNamed(context, Bosches.ROUTE_NAME);},
+                      press: () {Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);},
                     ),
                     CarPartsItem(
                       imagePath: 'assets/images/brakepads.png',
@@ -81,7 +81,7 @@ class Hyundai extends StatelessWidget {
                   children: [
                     CarPartsItem(
                       imagePath: 'assets/images/frontcontrolarm.png',
-                      text: 'Control Arm',
+                      text: 'Control Arms',
                       textPartType: 'Hyundai accent',
                       textPrize: '305 EG',
                       imageHeight: 100,
@@ -93,7 +93,7 @@ class Hyundai extends StatelessWidget {
                     ),
                     CarPartsItem(
                       imagePath: 'assets/images/rearshockabsorber.png',
-                      text: 'Shock Absborber',
+                      text: 'Shock Absborbers',
                       textPartType: 'Hyundai accent',
                       textPrize: '1100 EG',
                       imageHeight: 100,

@@ -1,18 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:warsha/Home/Scan/MlVision.dart';
 
-import '../../Models/AppProvider.dart';
-class Scan extends StatelessWidget {
+class Scan extends StatefulWidget {
+  @override
+  State<Scan> createState() => _ScanState();
+}
+
+class _ScanState extends State<Scan> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyThemeData.BackgroundColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Center(child: Text("Scan Page",style: TextStyle(fontSize: 20),))
-        ],
-      ),
-    );
+    return MlVision();
   }
 }

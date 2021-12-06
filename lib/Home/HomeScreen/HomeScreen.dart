@@ -12,7 +12,7 @@ import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Items/CarTypeItem.dart';
 import 'package:warsha/Models/SectionTitle.dart';
 import 'CarTyps/CarTypsSection/Typs/Hyundai/Hyundai.dart';
-import 'CarTyps/CarTypsSection/Typs/Hyundai/Products/Bosches.dart';
+import 'CarTyps/CarTypsSection/Typs/Hyundai/Products/IridiumSparkPlugs.dart';
 import 'CarTyps/CarTypsSection/Typs/Kia/Kia.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -95,13 +95,13 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     CarPartsItem(
                       imagePath: "assets/images/bosches.png",
-                      text: "Bosches",
+                      text: "Iridium Spark plugs",
                       textPartType: "Hyundai",
                       textPrize: "150EG",
                       imageHeight: 100,
                       imageWidth: 100,
                       sizebox: 20,
-                      press: () {Navigator.pushNamed(context, Bosches.ROUTE_NAME);},
+                      press: () {Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);},
                     ),
                     CarPartsItem(
                       imagePath: "assets/images/brakepads.png",

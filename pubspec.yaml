@@ -34,6 +34,8 @@ dependencies:
   firebase_auth: ^3.2.0
   cloud_firestore: ^3.1.0
   convex_bottom_bar: ^3.0.0
+  tflite: ^1.1.2
+  image_picker: ^0.8.4+4
 
 
 dev_dependencies:
@@ -53,6 +55,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/images/
 
 

@@ -4,14 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/DatabaseHelper/DataBaseHelper.dart';
-import 'package:warsha/Home/HomeScreen/HomeScreen.dart';
 import 'package:warsha/Home/Home.dart';
 import 'package:warsha/Models/User.dart'as MyUser;
 import 'package:warsha/ui/Registeration/buildSignInScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
-
-
 
 class buildSignUpScreen extends StatefulWidget{
   static final ROUTE_NAME = 'buildSignUpScreen';
@@ -25,7 +21,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
   String? email;
   String? password;
   String? conform_password;
-  //bool remember = false;
+
   final RegExp emailValidatorRegExp =
   RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
   static const String kEmailNullError = "Please Enter your email";
@@ -34,7 +30,6 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
   static const String kShortPassError = "Password is too short";
   static const String kMatchPassError = "Passwords don't match";
   final List<String?> errors = [];
-
   late AppProvider provider;
 
   void addError({String? error}) {
@@ -61,8 +56,6 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
       child: Container(
         margin: EdgeInsets.only(top: 30),
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.start,
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 15,),
             buildEmailFormField(),
@@ -104,25 +97,6 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
                     )),
               ],
             ),
-            Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Already have account ? ",
-                    style: TextStyle(color: Colors.black , fontSize: 11),
-                  ),
-                  TextButton(
-                      onPressed: (){Navigator.pushReplacementNamed(context, buildSignInScreen.ROUTE_NAME);},
-                      child: Text(
-                        "Sign In",
-                        style: TextStyle(color: MyThemeData.MainColor , fontSize: 11 , fontWeight: FontWeight.bold),
-                      ))
-                ],
-              ),
-            ),
           ],
         ),
       ),
@@ -157,11 +131,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
         labelText: "Email",
         hintText: "Enter your email",
         hintStyle: TextStyle(fontSize: 11),
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
-
-       // suffixIcon: CustomSurffixIcon(svgIcon: "assets/images/Mail.svg"),
       ),
     );
   }
@@ -195,11 +165,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
         labelText: "Password",
         hintText: "Enter your password",
         hintStyle: TextStyle(fontSize: 11),
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
-       // suffixIcon: CustomSurffixIcon(svgIcon: "assets/images/Lock.svg"),
-
       ),
     );
   }
@@ -232,14 +198,9 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
           borderRadius: new BorderRadius.circular(25.0),
            borderSide: new BorderSide(),),
         labelText: "Confirm Password",
-
         hintText: "Re-enter your password",
         hintStyle: TextStyle(fontSize: 11),
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        //suffixIcon: CustomSurffixIcon(svgIcon: "assets/images/Lock.svg"),
-
       ),
     );
   }
@@ -247,9 +208,6 @@ void CreateAccount(){
   if (_formKey.currentState!.validate()) {
     _formKey.currentState!.save();
      RegisterUser();
-    // if all are valid then go to success screen
-    // KeyboardUtil.hideKeyboard(context);
-    // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
   }
 
 }
@@ -261,7 +219,6 @@ void RegisterUser()async{
         password: password!
     );
     final userCollectionRef=getUserCollectionWithConverter();
-
     final user =MyUser.User(id:userCredential.user!.uid , email: email!);
     userCollectionRef.doc(user.id)
         .set(user)
@@ -277,12 +234,6 @@ void RegisterUser()async{
     else if(e.code=='email-already-in-use'){
       showErrorMessage(e.message??'');
     }}catch(e){
-    //showErrorMessage(e.toString()?? '');
-    // if (e.code == 'weak-password') {
-    //   print('The password provided is too weak.');
-    // } else if (e.code == 'email-already-in-use') {
-    //   print('The account already exists for that email.');
-    // }
   }
 }
   void showErrorMessage(String message) {

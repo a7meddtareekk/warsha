@@ -5,12 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/DatabaseHelper/DataBaseHelper.dart';
-import 'package:warsha/Home/HomeScreen/HomeScreen.dart';
 import 'package:warsha/Home/Home.dart';
-import 'package:warsha/Models/User.dart' as MyUser;
-
-
-import '../../main.dart';
 import 'buildSignUpScreen.dart';
 
 class buildSignInScreen extends StatefulWidget{
@@ -25,9 +20,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
   String? email;
   String? password;
   bool isRememberMe = false;
-  // bool? remember = false;
   final List<String?> errors = [];
-
   final RegExp emailValidatorRegExp =
   RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
   static const String kEmailNullError = "Please Enter your email";
@@ -36,7 +29,6 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
   static const String kShortPassError = "Password is too short";
   static const String kMatchPassError = "Passwords don't match";
   late AppProvider provider;
-
 
   void addError({String? error}) {
     if (!errors.contains(error))
@@ -60,7 +52,6 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
       child: Container(
         margin: EdgeInsets.only(top: 30),
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 15,),
@@ -103,27 +94,6 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
                     )),
               ],
             ),
-            Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Do you have account ? ",
-                    style: TextStyle(color: Colors.black , fontSize: 11),
-                  ),
-                  TextButton(
-                      onPressed: () {setState(() {
-                        buildSignUpScreen();
-                      });},
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(color: MyThemeData.MainColor , fontSize: 11 , fontWeight: FontWeight.bold),
-                      ))
-                ],
-              ),
-            ),
           ],
         ),
       ),
@@ -158,11 +128,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
         labelText: "Email",
         hintText: "Enter your email",
         hintStyle: TextStyle(fontSize: 11),
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        //suffixIcon: CustomSurffixIcon(svgIcon: "assets/images/Mail.svg"),
-
       ),
     );
   }
@@ -196,11 +162,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
         labelText: "Password",
         hintText: "Enter your password",
         hintStyle: TextStyle(fontSize: 11),
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        //suffixIcon: CustomSurffixIcon(svgIcon: "assets/images/Lock.svg"),
-
       ),
     );
   }
@@ -221,7 +183,6 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
       if (userCredential.user==null ){
         showErrorMessage('invalid email or password');
       }else{
-        // navigate to home
        final userRef = getUserCollectionWithConverter().doc(userCredential.user!.uid)
     .get()
            .then((retrievedUser){
@@ -234,7 +195,6 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
     on FirebaseAuthException catch (e) {
       showErrorMessage(e.message ?? '');
     } catch(e){
-     // showErrorMessage(e.toString()??'');
     }
   }
   void showErrorMessage(String message) {

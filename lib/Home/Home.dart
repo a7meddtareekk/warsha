@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Home/HomeScreen/HomeScreen.dart';
 import 'package:warsha/Home/Scan/Scan.dart';
-import 'package:warsha/Home/Search/Search.dart';
 import 'package:warsha/Home/Setting/Setting.dart';
 
 class Home extends StatefulWidget{
@@ -15,7 +14,7 @@ class Home extends StatefulWidget{
 
 class _HomeState extends State<Home> {
   late int selectedPage=0;
-  final  _PageOption=[HomeScreen(),Scan(),Search(),Setting()];
+  final  _PageOption=[HomeScreen(),Scan(),Setting()];
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -39,11 +38,12 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: ConvexAppBar(items: [
         TabItem(icon: Icons.home,title: 'Home'),
         TabItem(icon: Icons.camera,title: 'Scan'),
-        TabItem(icon: Icons.search,title: 'Seach'),
         TabItem(icon: Icons.settings,title: 'Settings'),
       ],
         initialActiveIndex: selectedPage,
-        backgroundColor: MyThemeData.MainColor,
+        color: MyThemeData.MainColor,
+        backgroundColor: MyThemeData.BackgroundColor,
+        activeColor: MyThemeData.MainColor,
         onTap: (int index){
         setState(() {
           selectedPage=index;
