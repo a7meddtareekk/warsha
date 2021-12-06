@@ -6,7 +6,6 @@ import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/DatabaseHelper/DataBaseHelper.dart';
 import 'package:warsha/Home/Home.dart';
 import 'package:warsha/Models/User.dart'as MyUser;
-import 'package:warsha/ui/Registeration/buildSignInScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class buildSignUpScreen extends StatefulWidget{

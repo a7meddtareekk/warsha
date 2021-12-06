@@ -8,16 +8,16 @@ import 'package:warsha/Home/Scan/MlVision.dart';
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Home/Home.dart';
 import 'package:warsha/Models/RadioButton.dart';
-import 'package:warsha/ui/Registeration/Registeration.dart';
-import 'package:warsha/ui/Registeration/buildSignInScreen.dart';
-import 'package:warsha/ui/Registeration/buildSignUpScreen.dart';
-import 'package:warsha/ui/introduction/Introduction.dart';
+import 'package:warsha/Registeration/buildSignInScreen.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/CarTypsSection.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Hyundai.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/IridiumSparkPlugs.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/BrakePads.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/ShockAbsorber.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Kia/Kia.dart';
+import 'Registeration/Registeration.dart';
+import 'Registeration/buildSignUpScreen.dart';
+import 'introduction/Introduction.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();

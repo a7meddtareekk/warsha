@@ -4,7 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:warsha/Models/AppProvider.dart';
-import 'package:warsha/ui/Registeration/Registeration.dart';
+import 'package:warsha/Registeration/Registeration.dart';
+
 class Setting extends StatefulWidget {
 
   @override

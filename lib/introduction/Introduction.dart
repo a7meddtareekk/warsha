@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:warsha/Models/AppProvider.dart';
-
-import 'package:warsha/ui/Registeration/Registeration.dart';
-
+import 'package:warsha/Registeration/Registeration.dart';
 class Introduction extends StatefulWidget {
   static final ROUTE_NAME = 'Introduction';
 
