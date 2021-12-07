@@ -16,75 +16,42 @@ class RadioButton extends StatefulWidget {
 }
 
 class _RadioButtonState extends State<RadioButton> {
-  int? valueee = 0;
-
   //_RadioButtonState({ this.valueee});
-
+  int? valueee = 0;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return  Container(
         width: MediaQuery.of(context).size.width,
         height: 400,
         child: Column(
           children: [
-            RadioListTile(
-                    title: Text('Iridium Spark plugs',
-                        style: TextStyle(color: Colors.black)),
+                  RadioListTile(
+                    title: Text('Iridium Spark plugs', style: TextStyle(color: Colors.black)),
                     value: 1,
                     groupValue: valueee,
-                    onChanged: (value) => setState(() {
-                      valueee = value as int?;
-                    }),
-                  ),
-
+                    onChanged: (value) => setState(() {valueee = value as int?;}),),
                   RadioListTile(
-                    title: Text('Brake Pads',
-                      style: TextStyle(color: Colors.black),),
+                    title: Text('Brake Pads', style: TextStyle(color: Colors.black),),
                     value: 2,
                     groupValue: valueee,
-                    onChanged: (value) => setState(() {
-                      valueee = value as int?;
-                    }),
-                  ),
+                    onChanged: (value) => setState(() {valueee = value as int?;}),),
                   RadioListTile(
-
-                    title: Text('Control Arms',
-                      style: TextStyle(color: Colors.black),),
+                    title: Text('Control Arms', style: TextStyle(color: Colors.black),),
                     value: 3,
                     groupValue: valueee,
-                    onChanged: (value) => setState(() {
-                      valueee = value as int?;
-                    }),
-                  ),
+                    onChanged: (value) => setState(() {valueee = value as int?;}),),
                   RadioListTile(
-                    title: Text('Shock Absborbers',
-                      style: TextStyle(color: Colors.black),),
+                    title: Text('Shock Absborbers', style: TextStyle(color: Colors.black),),
                     value: 4,
                     groupValue: valueee,
-                    onChanged: (value) => setState(() {
-                      valueee = value as int?;
-                    }),
-                  ),
-            FlatButton(
-              onPressed: () {
-                onButtonClick();
-              },shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(15),
-                )),
-              child: Text(
-                "Show More Details",
-                style: TextStyle(color: Colors.white),
-              ),
-              color: MyThemeData.MainColor,
-            )
-          ],
+                    onChanged: (value) => setState(() {valueee = value as int?;}),),
+                  FlatButton(
+                    onPressed: () {onButtonClick();},
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15),)),
+                    child: Text("Show More Details", style: TextStyle(color: Colors.white),),
+                    color: MyThemeData.MainColor,)],
         ),
-      );
-
-  }
-
+      );}
   onButtonClick() {
     if (valueee==1) Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);
     if (valueee==2) Navigator.pushNamed(context, BrakePads.ROUTE_NAME);

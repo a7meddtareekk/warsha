@@ -2,20 +2,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../Models/AppProvider.dart';
-import 'buildSignInScreen.dart';
-import 'buildSignUpScreen.dart';
+import 'SignIn/buildSignInScreen.dart';
+import 'SignUp/buildSignUpScreen.dart';
+
 class Registeration extends StatefulWidget {
   static final ROUTE_NAME = 'Registeration';
+
   @override
   _RegisterationState createState() => _RegisterationState();
 }
+
 class _RegisterationState extends State<Registeration> {
-  bool isMale = true;
   bool isSignUpScreen = true;
-  bool isRememberMe = false;
-  String UserName='';
-  String email='';
-  String password='';
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +37,6 @@ class _RegisterationState extends State<Registeration> {
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 700),
                   curve: Curves.easeOutQuad,
-                  //padding: EdgeInsets.all(20),
-                  //height: 380,
                   width: MediaQuery.of(context).size.width - 40,
                   margin: EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
@@ -59,10 +55,7 @@ class _RegisterationState extends State<Registeration> {
                                 Text(
                                   "Login",
                                   style: TextStyle(
-                                      color: !isSignUpScreen
-                                          ? MyThemeData.Black
-                                          : Color.fromARGB(77, 0, 0, 0),
-                                      fontWeight: FontWeight.bold),
+                                  color: !isSignUpScreen ? MyThemeData.Black : Color.fromARGB(77, 0, 0, 0), fontWeight: FontWeight.bold),
                                 ),
                                 if (!isSignUpScreen)
                                   Container(
@@ -103,7 +96,7 @@ class _RegisterationState extends State<Registeration> {
                         ],
                       ),
                       if (isSignUpScreen) buildSignUpScreen(),
-                      if (!isSignUpScreen)buildSignInScreen()
+                      if (!isSignUpScreen) buildSignInScreen()
                     ],
                   ),
                 ),
@@ -114,5 +107,4 @@ class _RegisterationState extends State<Registeration> {
       ),
     ));
   }
-
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:warsha/Home/Scan/MlVision.dart';
+import 'MachineLearningVision.dart';
 
 class Scan extends StatefulWidget {
   @override
@@ -10,6 +10,6 @@ class Scan extends StatefulWidget {
 class _ScanState extends State<Scan> {
   @override
   Widget build(BuildContext context) {
-    return MlVision();
+    return MachineLearningVision();
   }
 }

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/DatabaseHelper/DataBaseHelper.dart';
 import 'package:warsha/Home/Home.dart';
-import 'buildSignUpScreen.dart';
+import '../SignUp/buildSignUpScreen.dart';
 
 class buildSignInScreen extends StatefulWidget{
   static final ROUTE_NAME = 'buildSignIpScreen';

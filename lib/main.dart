@@ -4,19 +4,20 @@ import 'package:provider/provider.dart';
 import 'package:warsha/Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/ControlArms.dart';
 import 'package:warsha/Home/HomeScreen/SpecialForYou/JzEngine.dart';
 import 'package:warsha/Home/HomeScreen/SpecialForYou/RbEngine.dart';
-import 'package:warsha/Home/Scan/MlVision.dart';
+
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Home/Home.dart';
 import 'package:warsha/Models/RadioButton.dart';
-import 'package:warsha/Registeration/buildSignInScreen.dart';
+import 'package:warsha/Registeration/SignIn/buildSignInScreen.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/CarTypsSection.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Hyundai.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/IridiumSparkPlugs.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/BrakePads.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/ShockAbsorber.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Kia/Kia.dart';
+import 'Home/Scan/MachineLearningVision.dart';
 import 'Registeration/Registeration.dart';
-import 'Registeration/buildSignUpScreen.dart';
+import 'Registeration/SignUp/buildSignUpScreen.dart';
 import 'introduction/Introduction.dart';
 
 void main()async {
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
             JzEngine.ROUTE_NAME: (context) => JzEngine(),
             RbEngine.ROUTE_NAME: (context) => RbEngine(),
             RadioButton.ROUTE_NAME: (context) => RadioButton(),
-            MlVision.ROUTE_NAME: (context) => MlVision(),
+            MachineLearningVision.ROUTE_NAME: (context) => MachineLearningVision(),
 
           },
           initialRoute: Introduction.ROUTE_NAME,

@@ -72,38 +72,21 @@ class ProductItem extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Text(
-                              '\nName :           ',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('\n$textItemName')
-                          ],
-                        ),
+                            Text('\nName :           ', style: TextStyle(fontWeight: FontWeight.bold),),
+                            Text('\n$textItemName')],),
                         Row(
                           children: [
-                            Text('\nType car of:  ',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('\n$textItemType ')
-                          ],
-                        ),
+                            Text('\nType car of:  ', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('\n$textItemType ')],),
                         Row(
                           children: [
-                            Text('\nprice :            ',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('\n$textItemPrice')
-                          ],
-                        ),
+                            Text('\nprice :            ', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('\n$textItemPrice')],),
                         Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text('\ndescription : ',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text(
-                              '\n\n$textItemDescription',
-                              style: TextStyle(fontSize: 7),
-                            )
-                          ],
+                            Text('\ndescription : ', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('\n\n$textItemDescription', style: TextStyle(fontSize: 7),)],
                         ),
                       ],
                     ),

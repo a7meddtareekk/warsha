@@ -9,17 +9,15 @@ import 'package:warsha/Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Produ
 import 'package:warsha/Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/ShockAbsorber.dart';
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Models/RadioButton.dart';
-import 'package:warsha/Models/ShowBottomSheet.dart';
+import 'package:warsha/Models/CupertinoModalPopup.dart';
 
-class MlVision extends StatefulWidget {
+class MachineLearningVision extends StatefulWidget {
   static final ROUTE_NAME = 'MlVision';
-  const MlVision({Key? key}) : super(key: key);
-
+  const MachineLearningVision({Key? key}) : super(key: key);
   @override
-  _MlVisionState createState() => _MlVisionState();
+  _MachineLearningVisionState createState() => _MachineLearningVisionState();
 }
-
-class _MlVisionState extends State<MlVision> {
+class _MachineLearningVisionState extends State<MachineLearningVision> {
   File? _image;
   bool _loading = false;
   String result = '';
@@ -30,19 +28,8 @@ class _MlVisionState extends State<MlVision> {
     super.initState();
     _picker = ImagePicker();
     _loading = true;
-    loadModel();
-  }
+    loadModel();}
 
-  loadModel() async {
-    String? res = await Tflite.loadModel(
-        model: "assets/model_unquant.tflite",
-        labels: "assets/labels.txt",
-        numThreads: 1, // defaults to 1
-        isAsset: true, // defaults to true, set to false to load resources outside assets
-        useGpuDelegate: false // defaults to false, set to true to use GPU delegate
-    );
-    print(res);
-  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -60,16 +47,11 @@ class _MlVisionState extends State<MlVision> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _image == null ? Container() : Image.file(_image!),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  result,
+                const SizedBox(height: 20,),
+                Text(result,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20.0,
-                  ),
-                ),
+                    fontSize: 20.0,),),
                 _image == null ? Container() :RadioButton(),
               ],
             ),
@@ -79,7 +61,16 @@ class _MlVisionState extends State<MlVision> {
       );
 
   }
-
+  loadModel() async {
+    String? res = await Tflite.loadModel(
+        model: "assets/model_unquant.tflite",
+        labels: "assets/labels.txt",
+        numThreads: 1, // defaults to 1
+        isAsset: true, // defaults to true, set to false to load resources outside assets
+        useGpuDelegate: false // defaults to false, set to true to use GPU delegate
+    );
+    print(res);
+  }
   pickImageFromCamera() async {
     try{
       var image = await _picker.pickImage(source: ImageSource.camera);
@@ -112,8 +103,8 @@ class _MlVisionState extends State<MlVision> {
       });
 
     }
-
   }
+
   classifyImage(File image) async {
     var recognitions = await Tflite.runModelOnImage(
         path: image.path,
@@ -139,7 +130,7 @@ class _MlVisionState extends State<MlVision> {
   showtheme(){
       showCupertinoModalPopup(context: context, builder: (buildContext){
         //return ShowBottomSheet();
-        return ShowBottomSheett(pickFromGallery: pickImageFromGallery, pickFromCamera: pickImageFromCamera);
+        return CupertinoModalPopup(pickFromGallery: pickImageFromGallery, pickFromCamera: pickImageFromCamera);
 
       });
     }
