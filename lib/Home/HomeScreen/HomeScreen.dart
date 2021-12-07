@@ -93,6 +93,7 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
+
                     CarPartsItem(
                       imagePath: "assets/images/bosches.png",
                       text: "Iridium Spark plugs",

@@ -8,13 +8,17 @@ import 'package:warsha/Models/AppProvider.dart';
 
 class RadioButton extends StatefulWidget {
   static final ROUTE_NAME = 'RadioButton';
+  //int ? value = 0;
+ // RadioButton({ this.value});
 
   @override
-  State<RadioButton> createState() => _RadioButtonState();
+  State<RadioButton> createState() => _RadioButtonState(/*valueee: value*/);
 }
 
 class _RadioButtonState extends State<RadioButton> {
-  int? _value = 0;
+  int? valueee = 0;
+
+  //_RadioButtonState({ this.valueee});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +29,12 @@ class _RadioButtonState extends State<RadioButton> {
         child: Column(
           children: [
             RadioListTile(
-                    title: Text('Bosches',
+                    title: Text('Iridium Spark plugs',
                         style: TextStyle(color: Colors.black)),
                     value: 1,
-                    groupValue: _value,
+                    groupValue: valueee,
                     onChanged: (value) => setState(() {
-                      _value = value as int?;
+                      valueee = value as int?;
                     }),
                   ),
 
@@ -38,9 +42,9 @@ class _RadioButtonState extends State<RadioButton> {
                     title: Text('Brake Pads',
                       style: TextStyle(color: Colors.black),),
                     value: 2,
-                    groupValue: _value,
+                    groupValue: valueee,
                     onChanged: (value) => setState(() {
-                      _value = value as int?;
+                      valueee = value as int?;
                     }),
                   ),
                   RadioListTile(
@@ -48,18 +52,18 @@ class _RadioButtonState extends State<RadioButton> {
                     title: Text('Control Arms',
                       style: TextStyle(color: Colors.black),),
                     value: 3,
-                    groupValue: _value,
+                    groupValue: valueee,
                     onChanged: (value) => setState(() {
-                      _value = value as int?;
+                      valueee = value as int?;
                     }),
                   ),
                   RadioListTile(
                     title: Text('Shock Absborbers',
                       style: TextStyle(color: Colors.black),),
                     value: 4,
-                    groupValue: _value,
+                    groupValue: valueee,
                     onChanged: (value) => setState(() {
-                      _value = value as int?;
+                      valueee = value as int?;
                     }),
                   ),
             FlatButton(
@@ -82,9 +86,9 @@ class _RadioButtonState extends State<RadioButton> {
   }
 
   onButtonClick() {
-    if (_value==1) Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);
-    if (_value==2) Navigator.pushNamed(context, BrakePads.ROUTE_NAME);
-    if (_value==3) Navigator.pushNamed(context, ControlArms.ROUTE_NAME);
-    if (_value==4) Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);
+    if (valueee==1) Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);
+    if (valueee==2) Navigator.pushNamed(context, BrakePads.ROUTE_NAME);
+    if (valueee==3) Navigator.pushNamed(context, ControlArms.ROUTE_NAME);
+    if (valueee==4) Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);
   }
 }

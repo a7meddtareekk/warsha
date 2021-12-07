@@ -36,6 +36,13 @@ dependencies:
   convex_bottom_bar: ^3.0.0
   tflite: ^1.1.2
   image_picker: ^0.8.4+4
+  flutter_launcher_icons: ^0.9.2
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logoapp.png"
 
 
 dev_dependencies:

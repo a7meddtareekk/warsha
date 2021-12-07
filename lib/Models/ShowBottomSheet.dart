@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ShowBottomSheett extends StatelessWidget{
-  dynamic  ? pickFromGallery ;
+  dynamic ? pickFromGallery ;
   dynamic ? pickFromCamera ;
 
   ShowBottomSheett({required this.pickFromGallery , required this.pickFromCamera});
@@ -31,7 +31,7 @@ class ShowBottomSheett extends StatelessWidget{
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Center(
-                        child: Text(
+                        child: const Text(
                           'Open Camera Or loud From \nGallery to Scan photo',
                           style:
                           TextStyle(fontSize: 14, color: Colors.black),
@@ -42,7 +42,7 @@ class ShowBottomSheett extends StatelessWidget{
                       ),
                       FlatButton(
                         onPressed: () {pickFromCamera!();
-                        },
+                        Navigator.pop(context);},
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:warsha/Models/AppProvider.dart';
 
@@ -59,54 +60,55 @@ class ProductItem extends StatelessWidget {
               ),
               Expanded(
                 flex: 1,
-                child: Container(
-                  padding: EdgeInsets.all(30),
-                  //color: Colors.white,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(80),
-                          topLeft: Radius.circular(80))),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            '\nName :                      ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('\n$textItemName')
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text('\nType car of:             ',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          Text('\n$textItemType ')
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text('\nprice :                       ',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          Text('\n$textItemPrice')
-                        ],
-                      ),
-                      Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text('\ndescription :            ',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          Text(
-                            '\n\n\n\n$textItemDescription',
-                            style: TextStyle(fontSize: 8),
-                          )
-                        ],
-                      ),
-                    ],
+                child:  Container(
+                    padding: EdgeInsets.only(left: 30,right: 30,bottom: 30 ,top: 5),
+                    //color: Colors.white,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(80),
+                            topLeft: Radius.circular(80))),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              '\nName :           ',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text('\n$textItemName')
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text('\nType car of:  ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('\n$textItemType ')
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text('\nprice :            ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('\n$textItemPrice')
+                          ],
+                        ),
+                        Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text('\ndescription : ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text(
+                              '\n\n$textItemDescription',
+                              style: TextStyle(fontSize: 7),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+
               )
             ],
           ),

@@ -35,7 +35,7 @@ class CarPartsItem extends StatelessWidget{
       child: Container(
         height: boxHeight,
         width: boxWidth,
-        padding: EdgeInsets.only(bottom: 10),
+        padding: EdgeInsets.only(bottom: 10,left: 10,right: 10),
         margin: EdgeInsets.all(3),
         decoration:BoxDecoration(
             boxShadow: [
@@ -48,7 +48,7 @@ class CarPartsItem extends StatelessWidget{
         child: Column(
           children: [
             Image.asset('$imagePath' ,height:imageHeight,width: imageWidth,),
-            Text('$text',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 12),),
+            Text('$text',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 10),),
             Container(
               padding: EdgeInsets.only(left: 10,right: 10),
               child: Row(

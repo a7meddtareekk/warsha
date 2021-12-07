@@ -24,7 +24,7 @@ class _MlVisionState extends State<MlVision> {
   bool _loading = false;
   String result = '';
   ImagePicker _picker = ImagePicker();
-  int? _value = 0;
+  //int? _value = 0;
   @override
   void initState() {
     super.initState();
@@ -32,12 +32,7 @@ class _MlVisionState extends State<MlVision> {
     _loading = true;
     loadModel();
   }
-  onButtonClick() {
-    if (_value==1) Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);
-    if (_value==2) Navigator.pushNamed(context, BrakePads.ROUTE_NAME);
-    if (_value==3) Navigator.pushNamed(context, ControlArms.ROUTE_NAME);
-    if (_value==4) Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);
-  }
+
   loadModel() async {
     String? res = await Tflite.loadModel(
         model: "assets/model_unquant.tflite",
@@ -58,7 +53,6 @@ class _MlVisionState extends State<MlVision> {
         ),
         backgroundColor: MyThemeData.BackgroundColor,
         body:Container(
-          //width: 300,
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -76,65 +70,7 @@ class _MlVisionState extends State<MlVision> {
                     fontSize: 20.0,
                   ),
                 ),
-                _image == null ? Container() : Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 400,
-                  child: Column(
-                    children: [
-                      RadioListTile(
-                        title: Text('Iridium Spark plugs',
-                            style: TextStyle(color: Colors.black)),
-                        value: 1,
-                        groupValue: _value,
-                        onChanged: (value) => setState(() {
-                          _value = value as int?;
-                        }),
-                      ),
-
-                      RadioListTile(
-                        title: Text('Brake Pads',
-                          style: TextStyle(color: Colors.black),),
-                        value: 2,
-                        groupValue: _value,
-                        onChanged: (value) => setState(() {
-                          _value = value as int?;
-                        }),
-                      ),
-                      RadioListTile(
-
-                        title: Text('Control Arms',
-                          style: TextStyle(color: Colors.black),),
-                        value: 3,
-                        groupValue: _value,
-                        onChanged: (value) => setState(() {
-                          _value = value as int?;
-                        }),
-                      ),
-                      RadioListTile(
-                        title: Text('Shock Absborbers',
-                          style: TextStyle(color: Colors.black),),
-                        value: 4,
-                        groupValue: _value,
-                        onChanged: (value) => setState(() {
-                          _value = value as int?;
-                        }),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          onButtonClick();
-                        },shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
-                          )),
-                        child: Text(
-                          "Show More Details",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        color: MyThemeData.MainColor,
-                      )
-                    ],
-                  ),
-                ),
+                _image == null ? Container() :RadioButton(),
               ],
             ),
           ),
@@ -202,78 +138,16 @@ class _MlVisionState extends State<MlVision> {
 
   showtheme(){
       showCupertinoModalPopup(context: context, builder: (buildContext){
-        return ShowBottomSheet();
-        //return ShowBottomSheett(pickFromGallery: pickImageFromGallery(), pickFromCamera: pickImageFromCamera());
+        //return ShowBottomSheet();
+        return ShowBottomSheett(pickFromGallery: pickImageFromGallery, pickFromCamera: pickImageFromCamera);
 
       });
     }
-Widget ShowBottomSheet (){
-  return Center(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(100),
-                bottomLeft: Radius.circular(100)),
-            color: Color.fromARGB(255, 252, 212, 193),
-          ),
-          height: 300,
-          width: 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: EdgeInsets.all(30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Center(
-                      child: Text(
-                        'Open Camera Or loud From \nGallery to Scan photo',
-                        style:
-                        TextStyle(fontSize: 14, color: Colors.black),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    FlatButton(
-                      onPressed: () {pickImageFromCamera();},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          )),
-                      child: Text('Open Camera',
-                          style: TextStyle(color: Colors.white)),
-                      color: Color.fromARGB(255, 212, 127, 166),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    FlatButton(
-                      onPressed: () {pickImageFromGallery();
-                      Navigator.pop(context);},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          )),
-                      child: Text('Load From Gallery',
-                          style: TextStyle(color: Colors.white)),
-                      color: Color.fromARGB(255, 153, 143, 162),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-
+  // onButtonClick() {
+  //   if (_value==1) Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);
+  //   if (_value==2) Navigator.pushNamed(context, BrakePads.ROUTE_NAME);
+  //   if (_value==3) Navigator.pushNamed(context, ControlArms.ROUTE_NAME);
+  //   if (_value==4) Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);
+  // }
 
 }

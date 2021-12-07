@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:warsha/Models/AppProvider.dart';
+import 'package:warsha/introduction/DefultIntroductionButton.dart';
 import 'package:warsha/Registeration/Registeration.dart';
+import 'IntroductionContent.dart';
 class Introduction extends StatefulWidget {
   static final ROUTE_NAME = 'Introduction';
 
@@ -55,7 +57,7 @@ class _IntroductionState extends State<Introduction> {
                       flex: 3,
                       child: Container(
                           padding: EdgeInsets.all(15),
-                          margin: EdgeInsets.all(55),
+                          margin: EdgeInsets.all(35),
                           decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(
@@ -77,7 +79,7 @@ class _IntroductionState extends State<Introduction> {
                               });
                             },
                             itemBuilder: (context, index) =>
-                                introductionContent(
+                                IntroductionContent(
                               image: introdata[index]["image"]!,
                               text: introdata[index]["text"]!,
                             ),
@@ -92,7 +94,7 @@ class _IntroductionState extends State<Introduction> {
                                 (index) => BuildDot(index: index)),
                           ),
                           Spacer(),
-                          defultButton(
+                          DefultIntroductionButton(
                             text: currentPage==introdata.length -1 ?"Go to Registration":"Continue",
                             press: () {
                               if ( currentPage == introdata.length -1 ){
@@ -124,71 +126,6 @@ class _IntroductionState extends State<Introduction> {
   }
 }
 
-class introductionContent extends StatelessWidget {
-   introductionContent({
-      Key? key,
-    required  this.text,
-    required this.image,
-  }) : super(key: key);
-  late String text, image;
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(
-          image,
-          //"assets/images/introduction.png",
-        ),
-        Text(
-          "Auto Part Detection",
-          style: TextStyle(
-              fontSize: 22,
-              color: MyThemeData.Black,
-              fontWeight: FontWeight.bold),
-        ),
-        Container(
-            padding: EdgeInsets.only(left: 20, right: 20, top: 2),
-            child: Text(
-              text, textAlign: TextAlign.center,
-              //"This app offers the ability to know everything related to auto parts and know all the details of spare parts through the feature of the image of the piece to be known through the application and show all the contents of the piece. The app provides easy shopping through the app by fully organizing all the information. It provides avoiding cheating auto parts dealers",
-              style: TextStyle(
-                fontSize: 8,
-              ),
-            ))
-      ],
-    );
-  }
-}
 
-class defultButton extends StatelessWidget {
-    defultButton({
-     Key? key,
-    required this.text,
-    required this.press,
-  }) : super(key: key);
-  late String text;
-   Function? press;
 
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Expanded(
-      child: SizedBox(
-        width: double.infinity,
-        height:double.infinity ,
-        child: FlatButton(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(80),
-            )),
-            color: MyThemeData.MainColor,
-            onPressed: (){press!();},
-            child: Text(
-              text,
-              style: TextStyle(color: Colors.white),
-            )),
-      ),
-    );
-  }
-}
