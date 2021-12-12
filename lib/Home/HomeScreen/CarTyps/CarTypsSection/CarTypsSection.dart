@@ -17,7 +17,7 @@ class CarTypsSection extends StatelessWidget {
       backgroundColor: MyThemeData.BackgroundColor,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: MyThemeData.White),
           onPressed: () {Navigator.pop(context);},
         ),
         backgroundColor: MyThemeData.MainColor,

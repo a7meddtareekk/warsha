@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warsha/Models/AppProvider.dart';
 
 class SpecialForYouItem extends StatelessWidget{
   String imagePath  ;
@@ -16,8 +17,8 @@ class SpecialForYouItem extends StatelessWidget{
       decoration:BoxDecoration(
         image:DecorationImage(image: AssetImage('$imagePath',),fit: BoxFit.cover) ,
           boxShadow: [
-            BoxShadow(color: Color.fromARGB(77, 0, 0, 0).withOpacity(0.2),spreadRadius: 2,blurRadius: 4)],
-          color: Colors.white,
+            BoxShadow(color: MyThemeData.Shadow.withOpacity(0.2),spreadRadius: 2,blurRadius: 4)],
+          color:  MyThemeData.White,
           borderRadius: BorderRadius.circular(20)
       ),
 
@@ -25,10 +26,10 @@ class SpecialForYouItem extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text('$text',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: Colors.white,shadows:[Shadow(blurRadius: 9.0,
-            color: Color.fromARGB(77, 0, 0, 0),)]),),
-          Text('$text2',style: TextStyle(fontSize: 12,color: Colors.white,shadows: [Shadow(blurRadius: 9.0,
-              color: Color.fromARGB(77, 0, 0, 0))]),)
+          Text('$text',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: MyThemeData.White,shadows:[Shadow(blurRadius: 9.0,
+            color: MyThemeData.Shadow,)]),),
+          Text('$text2',style: TextStyle(fontSize: 12,color: MyThemeData.White,shadows: [Shadow(blurRadius: 9.0,
+              color: MyThemeData.Shadow)]),)
         ],
       ),
     );

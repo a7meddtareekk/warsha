@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:warsha/Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/ControlArms.dart';
 import 'package:warsha/Home/HomeScreen/SpecialForYou/JzEngine.dart';
 import 'package:warsha/Home/HomeScreen/SpecialForYou/RbEngine.dart';
-
 import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Home/Home.dart';
 import 'package:warsha/Models/RadioButton.dart';
@@ -30,10 +29,15 @@ await Firebase.initializeApp();
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return ChangeNotifierProvider(
       create: (context)=>AppProvider(),
       builder: (context,widget){
+        final themeProvider = Provider.of<AppProvider>(context);
         return MaterialApp(
+          themeMode: themeProvider.themeMode,
+          theme: MyThemeData.LightTheme,
+          darkTheme: MyThemeData.DarkTheme,
           debugShowCheckedModeBanner: false,
           routes: {
             Introduction.ROUTE_NAME: (context) => Introduction(),
@@ -54,7 +58,7 @@ class MyApp extends StatelessWidget {
             MachineLearningVision.ROUTE_NAME: (context) => MachineLearningVision(),
 
           },
-          initialRoute: Introduction.ROUTE_NAME,
+          initialRoute: Home.ROUTE_NAME,
 
         );
       },

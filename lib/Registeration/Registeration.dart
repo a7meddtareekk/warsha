@@ -55,7 +55,7 @@ class _RegisterationState extends State<Registeration> {
                                 Text(
                                   "Login",
                                   style: TextStyle(
-                                  color: !isSignUpScreen ? MyThemeData.Black : Color.fromARGB(77, 0, 0, 0), fontWeight: FontWeight.bold),
+                                  color: !isSignUpScreen ? MyThemeData.Black : MyThemeData.Shadow, fontWeight: FontWeight.bold),
                                 ),
                                 if (!isSignUpScreen)
                                   Container(
@@ -80,7 +80,7 @@ class _RegisterationState extends State<Registeration> {
                                   style: TextStyle(
                                       color: isSignUpScreen
                                           ? MyThemeData.Black
-                                          : Color.fromARGB(77, 0, 0, 0),
+                                          : MyThemeData.Shadow,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 if (isSignUpScreen)

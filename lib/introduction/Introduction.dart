@@ -61,12 +61,12 @@ class _IntroductionState extends State<Introduction> {
                           decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.3),
+                                color: MyThemeData.Black.withOpacity(0.3),
                                 blurRadius: 15,
                                 spreadRadius: 5,
                               )
                             ],
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              color: MyThemeData.White,
                               borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(80),
                                   bottomLeft: Radius.circular(80))),

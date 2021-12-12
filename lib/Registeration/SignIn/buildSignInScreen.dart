@@ -72,7 +72,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
                   'Remember Me ',
                   style: TextStyle(
                       fontSize: 11,
-                      color: Color.fromARGB(77, 0, 0, 0)),
+                      color: MyThemeData.Shadow),
                 )
               ],
             ),
@@ -90,7 +90,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
                     },
                     child: Text(
                       "Sign In ",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: MyThemeData.White),
                     )),
               ],
             ),
@@ -126,8 +126,9 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
           borderRadius: new BorderRadius.circular(25.0),
           borderSide: new BorderSide(),),
         labelText: "Email",
+        labelStyle: TextStyle(color: MyThemeData.Black),
         hintText: "Enter your email",
-        hintStyle: TextStyle(fontSize: 11),
+        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -160,8 +161,9 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
           borderRadius: new BorderRadius.circular(25.0),
           borderSide: new BorderSide(),),
         labelText: "Password",
+        labelStyle: TextStyle(color: MyThemeData.Black),
         hintText: "Enter your password",
-        hintStyle: TextStyle(fontSize: 11),
+        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );

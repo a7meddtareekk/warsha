@@ -18,7 +18,7 @@ class Hyundai extends StatelessWidget {
       backgroundColor: MyThemeData.BackgroundColor,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: MyThemeData.White),
           onPressed: () {
             Navigator.pushReplacementNamed(context, CarTypsSection.ROUTE_NAME);
           },
@@ -30,7 +30,7 @@ class Hyundai extends StatelessWidget {
             Text(
               'Auto Parts Detection ',
               style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  TextStyle(color: MyThemeData.White, fontWeight: FontWeight.bold),
             ),
           ],
         ),

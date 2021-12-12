@@ -39,21 +39,21 @@ class CarPartsItem extends StatelessWidget{
         margin: EdgeInsets.all(3),
         decoration:BoxDecoration(
             boxShadow: [
-              BoxShadow(color: Color.fromARGB(77, 0, 0, 0).withOpacity(0.1),spreadRadius: 1,blurRadius: 7)
+              BoxShadow(color: MyThemeData.Shadow.withOpacity(0.1),spreadRadius: 1,blurRadius: 7)
             ],
-            color: Colors.white,
+            color: MyThemeData.White,
             borderRadius: BorderRadius.circular(20)
         ),
 
         child: Column(
           children: [
             Image.asset('$imagePath' ,height:imageHeight,width: imageWidth,),
-            Text('$text',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 10),),
+            Text('$text',style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Black,fontSize: 10),),
             Container(
               padding: EdgeInsets.only(left: 10,right: 10),
               child: Row(
                 children: [
-                  Text('$textPartType',style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromARGB(77, 0, 0, 0),fontSize: 8),),
+                  Text('$textPartType',style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Shadow,fontSize: 8),),
                   SizedBox(width: sizebox,),
                   Text('$textPrize',style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.MainColor,fontSize: 8),),
                 ],

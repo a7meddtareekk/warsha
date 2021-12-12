@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:warsha/Models/AppProvider.dart';
 
 class CupertinoModalPopup extends StatelessWidget{
   dynamic ? pickFromGallery ;
@@ -15,7 +16,7 @@ class CupertinoModalPopup extends StatelessWidget{
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(topRight: Radius.circular(100), bottomLeft: Radius.circular(100)),
-              color: Color.fromARGB(255, 252, 212, 193),),
+              color: MyThemeData.CupertinoModalPopupColor,),
             height: 300,
             width: 300,
             child: Column(
@@ -28,7 +29,7 @@ class CupertinoModalPopup extends StatelessWidget{
                     children: [
                       Center(
                         child: Text('Open Camera Or loud From \nGallery to Scan photo',
-                          style: TextStyle(fontSize: 14, color: Colors.black),),
+                          style: TextStyle(fontSize: 14, color: MyThemeData.Black),),
                       ),
                       SizedBox(height: 10,),
                       FlatButton(

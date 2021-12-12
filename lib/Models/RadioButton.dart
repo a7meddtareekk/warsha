@@ -12,43 +12,42 @@ class RadioButton extends StatefulWidget {
  // RadioButton({ this.value});
 
   @override
-  State<RadioButton> createState() => _RadioButtonState(/*valueee: value*/);
+  State<RadioButton> createState() => _RadioButtonState();
 }
 
 class _RadioButtonState extends State<RadioButton> {
-  //_RadioButtonState({ this.valueee});
   int? valueee = 0;
   @override
   Widget build(BuildContext context) {
     return  Container(
         width: MediaQuery.of(context).size.width,
-        height: 400,
+        height: 350,
         child: Column(
           children: [
                   RadioListTile(
-                    title: Text('Iridium Spark plugs', style: TextStyle(color: Colors.black)),
+                    title: Text('Iridium Spark plugs', style: TextStyle(color: MyThemeData.Black)),
                     value: 1,
                     groupValue: valueee,
                     onChanged: (value) => setState(() {valueee = value as int?;}),),
                   RadioListTile(
-                    title: Text('Brake Pads', style: TextStyle(color: Colors.black),),
+                    title: Text('Brake Pads', style: TextStyle(color: MyThemeData.Black),),
                     value: 2,
                     groupValue: valueee,
                     onChanged: (value) => setState(() {valueee = value as int?;}),),
                   RadioListTile(
-                    title: Text('Control Arms', style: TextStyle(color: Colors.black),),
+                    title: Text('Control Arms', style: TextStyle(color: MyThemeData.Black),),
                     value: 3,
                     groupValue: valueee,
                     onChanged: (value) => setState(() {valueee = value as int?;}),),
                   RadioListTile(
-                    title: Text('Shock Absborbers', style: TextStyle(color: Colors.black),),
+                    title: Text('Shock Absborbers', style: TextStyle(color: MyThemeData.Black),),
                     value: 4,
                     groupValue: valueee,
                     onChanged: (value) => setState(() {valueee = value as int?;}),),
                   FlatButton(
                     onPressed: () {onButtonClick();},
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15),)),
-                    child: Text("Show More Details", style: TextStyle(color: Colors.white),),
+                    child: Text("Show More Details", style: TextStyle(color: MyThemeData.White),),
                     color: MyThemeData.MainColor,)],
         ),
       );}

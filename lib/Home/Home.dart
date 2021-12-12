@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Auto Parts Detection ',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold) ,),
+              Text('Auto Parts Detection ',style:TextStyle(color: MyThemeData.White,fontWeight: FontWeight.bold) ,),
             ],
           ),
         ),

@@ -29,9 +29,9 @@ class IntroductionContent extends StatelessWidget {
             padding: EdgeInsets.only(left: 20, right: 20, top: 2),
             child: Text(
               text, textAlign: TextAlign.center,
-              //"This app offers the ability to know everything related to auto parts and know all the details of spare parts through the feature of the image of the piece to be known through the application and show all the contents of the piece. The app provides easy shopping through the app by fully organizing all the information. It provides avoiding cheating auto parts dealers",
               style: TextStyle(
                 fontSize: 8,
+                color: MyThemeData.Black
               ),
             ))
       ],

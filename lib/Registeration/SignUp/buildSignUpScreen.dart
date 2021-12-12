@@ -76,7 +76,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
                   'I accept the Terms of Use ',
                   style: TextStyle(
                       fontSize: 11,
-                      color: Color.fromARGB(77, 0, 0, 0)),
+                      color: MyThemeData.Shadow),
                 )
               ],
             ),
@@ -92,7 +92,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
                     onPressed: ()=>CreateAccount(),
                     child: Text(
                       "Sign Up ",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: MyThemeData.White),
                     )),
               ],
             ),
@@ -129,7 +129,8 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
           borderSide: new BorderSide(),),
         labelText: "Email",
         hintText: "Enter your email",
-        hintStyle: TextStyle(fontSize: 11),
+        labelStyle: TextStyle(color: MyThemeData.Black),
+        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -163,7 +164,8 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
           borderSide: new BorderSide(),),
         labelText: "Password",
         hintText: "Enter your password",
-        hintStyle: TextStyle(fontSize: 11),
+        labelStyle: TextStyle(color: MyThemeData.Black),
+        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -198,7 +200,8 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
            borderSide: new BorderSide(),),
         labelText: "Confirm Password",
         hintText: "Re-enter your password",
-        hintStyle: TextStyle(fontSize: 11),
+        labelStyle: TextStyle(color: MyThemeData.Black),
+        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );

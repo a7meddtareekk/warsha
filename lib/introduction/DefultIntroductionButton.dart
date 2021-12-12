@@ -26,7 +26,7 @@ class DefultIntroductionButton extends StatelessWidget {
             onPressed: (){press!();},
             child: Text(
               text,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: MyThemeData.White),
             )),
       ),
     );

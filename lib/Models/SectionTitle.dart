@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'AppProvider.dart';
+
 class SectionTitle extends StatelessWidget {
    String text;
    String? seeMore ;
@@ -18,7 +20,7 @@ class SectionTitle extends StatelessWidget {
           Text(
             text,
             style: TextStyle(
-                fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
+                fontSize: 14, fontWeight: FontWeight.bold, color: MyThemeData.Black),
           ),
           TextButton(
               onPressed: () {
@@ -27,7 +29,7 @@ class SectionTitle extends StatelessWidget {
               child: Text(
                 '$seeMore',
                 style:
-                    TextStyle(fontSize: 12, color: Color.fromARGB(77, 0, 0, 0)),
+                    TextStyle(fontSize: 12, color: MyThemeData.Shadow),
               ))
         ],
       ),

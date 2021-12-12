@@ -29,7 +29,7 @@ class ProductItem extends StatelessWidget {
           preferredSize: Size.fromHeight(70),
           child: AppBar(
             leading: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.white),
+              icon: Icon(Icons.arrow_back, color: MyThemeData.White),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -45,7 +45,7 @@ class ProductItem extends StatelessWidget {
                 Text(
                   'Auto Parts Detection ',
                   style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                      color: MyThemeData.White, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -64,7 +64,7 @@ class ProductItem extends StatelessWidget {
                     padding: EdgeInsets.only(left: 30,right: 30,bottom: 30 ,top: 5),
                     //color: Colors.white,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: MyThemeData.White,
                         borderRadius: BorderRadius.only(
                             topRight: Radius.circular(80),
                             topLeft: Radius.circular(80))),
@@ -72,27 +72,26 @@ class ProductItem extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Text('\nName :           ', style: TextStyle(fontWeight: FontWeight.bold),),
-                            Text('\n$textItemName')],),
+                            Text('\nName :           ', style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Black),),
+                            Text('\n$textItemName',style: TextStyle(color: MyThemeData.Black),)],),
                         Row(
                           children: [
-                            Text('\nType car of:  ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('\n$textItemType ')],),
+                            Text('\nType car of:  ', style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Black)),
+                            Text('\n$textItemType ',style: TextStyle(color: MyThemeData.Black))],),
                         Row(
                           children: [
-                            Text('\nprice :            ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('\n$textItemPrice')],),
+                            Text('\nprice :            ', style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Black)),
+                            Text('\n$textItemPrice',style: TextStyle(color: MyThemeData.Black))],),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text('\ndescription : ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('\n\n$textItemDescription', style: TextStyle(fontSize: 7),)],
+                            Text('\ndescription : ', style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Black)),
+                            Text('\n\n$textItemDescription', style: TextStyle(fontSize: 7,color: MyThemeData.Black),)],
                         ),
                       ],
                     ),
                   ),
-
-              )
+              ),
             ],
           ),
         ));
