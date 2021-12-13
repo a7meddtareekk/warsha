@@ -130,7 +130,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
         labelText: "Email",
         hintText: "Enter your email",
         labelStyle: TextStyle(color: MyThemeData.Black),
-        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
+        hintStyle: TextStyle(fontSize: 11,),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -165,7 +165,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
         labelText: "Password",
         hintText: "Enter your password",
         labelStyle: TextStyle(color: MyThemeData.Black),
-        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
+        hintStyle: TextStyle(fontSize: 11,),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -201,7 +201,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
         labelText: "Confirm Password",
         hintText: "Re-enter your password",
         labelStyle: TextStyle(color: MyThemeData.Black),
-        hintStyle: TextStyle(fontSize: 11,color: MyThemeData.Black),
+        hintStyle: TextStyle(fontSize: 11,),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );

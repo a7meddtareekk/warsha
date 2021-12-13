@@ -8,8 +8,6 @@ import 'package:warsha/Models/AppProvider.dart';
 
 class RadioButton extends StatefulWidget {
   static final ROUTE_NAME = 'RadioButton';
-  //int ? value = 0;
- // RadioButton({ this.value});
 
   @override
   State<RadioButton> createState() => _RadioButtonState();

@@ -22,7 +22,6 @@ class _MachineLearningVisionState extends State<MachineLearningVision> {
   bool _loading = false;
   String result = '';
   ImagePicker _picker = ImagePicker();
-  //int? _value = 0;
   @override
   void initState() {
     super.initState();
@@ -134,11 +133,5 @@ class _MachineLearningVisionState extends State<MachineLearningVision> {
 
       });
     }
-  // onButtonClick() {
-  //   if (_value==1) Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);
-  //   if (_value==2) Navigator.pushNamed(context, BrakePads.ROUTE_NAME);
-  //   if (_value==3) Navigator.pushNamed(context, ControlArms.ROUTE_NAME);
-  //   if (_value==4) Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);
-  // }
 
 }

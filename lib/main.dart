@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
             MachineLearningVision.ROUTE_NAME: (context) => MachineLearningVision(),
 
           },
-          initialRoute: Home.ROUTE_NAME,
+          initialRoute: Introduction.ROUTE_NAME,
 
         );
       },
