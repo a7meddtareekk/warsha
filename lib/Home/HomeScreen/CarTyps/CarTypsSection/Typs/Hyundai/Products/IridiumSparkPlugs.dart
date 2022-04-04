@@ -10,7 +10,8 @@ class IridiumSparkPlugs extends StatelessWidget {
         ProductimagePath: 'assets/images/bosches.png',
         textItemName: 'Iridium Spark plugs',
         textItemType:'Hyundai' ,
-        textItemPrice:'150 EG' ,
+        textItemPrice:'EG' ,
+        ItemPrice: 150,
         textItemDescription: 'NGK Laser Iridium Spark Plugs For:\nHyundai Accent 1.4 GL E; S; L CVT,\nAccent 1.6 GLS 2011 -up.\nPlatinum disc welded to \nbackside of ground electrode provides long life',),
     );
   }

@@ -7,11 +7,11 @@ class CarPartsItem extends StatelessWidget{
   String text ;
   String textPartType ;
   String textPrize ;
-  double imageHeight;
-  double imageWidth;
+  double? imageHeight;
+  double? imageWidth;
   double? boxWidth;
   double? boxHeight;
-  double sizebox;
+  double? sizebox;
   Function press;
 
   CarPartsItem({
@@ -19,11 +19,11 @@ class CarPartsItem extends StatelessWidget{
     required this.imagePath,
     required this.textPartType,
     required this.textPrize,
-    required this.imageHeight,
+     this.imageHeight,
      this.boxHeight,
      this.boxWidth,
-    required this.imageWidth,
-    required this.sizebox,
+     this.imageWidth,
+     this.sizebox,
     required this.press
   });
 
@@ -33,8 +33,8 @@ class CarPartsItem extends StatelessWidget{
     return GestureDetector(
       onTap: (){press();},
       child: Container(
-        height: boxHeight,
-        width: boxWidth,
+        height: MediaQuery.of(context).size.height*0.19,
+        width: MediaQuery.of(context).size.width*0.35,
         padding: EdgeInsets.only(bottom: 10,left: 10,right: 10),
         margin: EdgeInsets.all(3),
         decoration:BoxDecoration(
@@ -47,14 +47,16 @@ class CarPartsItem extends StatelessWidget{
 
         child: Column(
           children: [
-            Image.asset('$imagePath' ,height:imageHeight,width: imageWidth,),
+            Image.asset('$imagePath' ,
+              height: MediaQuery.of(context).size.height*0.13,
+              width: MediaQuery.of(context).size.width*0.19,),
             Text('$text',style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Black,fontSize: 10),),
             Container(
               padding: EdgeInsets.only(left: 10,right: 10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('$textPartType',style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.Shadow,fontSize: 8),),
-                  SizedBox(width: sizebox,),
                   Text('$textPrize',style: TextStyle(fontWeight: FontWeight.bold,color: MyThemeData.MainColor,fontSize: 8),),
                 ],
               ),

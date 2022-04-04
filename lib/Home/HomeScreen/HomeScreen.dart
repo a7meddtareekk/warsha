@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
+          height: MediaQuery.of(context).size.height,
           padding: EdgeInsets.all(10),
           child: Column(
             children: <Widget>[
@@ -99,9 +100,6 @@ class HomeScreen extends StatelessWidget {
                       text: "Iridium Spark plugs",
                       textPartType: "Hyundai",
                       textPrize: "150EG",
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      sizebox: 20,
                       press: () {Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);},
                     ),
                     CarPartsItem(
@@ -109,9 +107,6 @@ class HomeScreen extends StatelessWidget {
                       text: "Brake Pads",
                       textPartType: "Hyundai",
                       textPrize: "270EG",
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      sizebox: 20,
                       press: () {Navigator.pushNamed(context, BrakePads.ROUTE_NAME);},
                     ),
                     CarPartsItem(
@@ -119,10 +114,6 @@ class HomeScreen extends StatelessWidget {
                       text: "Control Arms",
                       textPartType: "Hyundai",
                       textPrize: "305EG",
-                      imageHeight: 100,
-                      imageWidth: 100,
-
-                      sizebox: 20,
                       press: () {Navigator.pushNamed(context, ControlArms.ROUTE_NAME);},
                     ),
                     CarPartsItem(
@@ -130,9 +121,6 @@ class HomeScreen extends StatelessWidget {
                       text: "Shock Absorber",
                       textPartType: "Hyundai",
                       textPrize: "1100EG",
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      sizebox: 20,
                       press: () {Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);},
                     ),
                   ],

@@ -56,13 +56,13 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
         margin: EdgeInsets.only(top: 30),
         child: Column(
           children: [
-            SizedBox(height: 15,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
             buildEmailFormField(),
-            SizedBox(height: 15,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
             buildPasswordFormField(),
-            SizedBox(height: 15,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
             buildConformPassFormField(),
-            SizedBox(height: 15,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.01,),
             Row(
               children: [
                 Checkbox(
@@ -80,6 +80,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
                 )
               ],
             ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

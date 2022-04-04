@@ -10,12 +10,13 @@ class SpecialForYouItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 110,
-      width: 190,
+      height: MediaQuery.of(context).size.height*0.18,
+      width: MediaQuery.of(context).size.width*0.55,
+
       padding: EdgeInsets.only(bottom: 5,left: 10),
       margin: EdgeInsets.all(5),
       decoration:BoxDecoration(
-        image:DecorationImage(image: AssetImage('$imagePath',),fit: BoxFit.cover) ,
+        image:DecorationImage(image: AssetImage('$imagePath'),fit: BoxFit.cover) ,
           boxShadow: [
             BoxShadow(color: MyThemeData.Shadow.withOpacity(0.2),spreadRadius: 2,blurRadius: 4)],
           color:  MyThemeData.White,

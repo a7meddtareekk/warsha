@@ -45,7 +45,7 @@ class _MachineLearningVisionState extends State<MachineLearningVision> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _image == null ? Container() : Container(width:MediaQuery.of(context).size.width,height: 200,child: Image.file(_image!),),
+                _image == null ? Container() : Image.file(_image!),
                 const SizedBox(height: 20,),
                 Text(result,
                   style: TextStyle(

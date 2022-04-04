@@ -10,7 +10,8 @@ class ShockAbsorber extends StatelessWidget {
         ProductimagePath: 'assets/images/rearshockabsorber.png',
         textItemName: 'ShockAbsorber',
         textItemType:'Hyundai' ,
-        textItemPrice:'1100 EG' ,
+        textItemPrice:' EG' ,
+        ItemPrice: 1100,
         textItemDescription: 'The Hyundai Accent Shock Absorber is \na part of your vehicles suspension system. \nIts main function is to absorb \nthe vibrations and shocks generated \nwhile driving on uneven terrain. ',),
     );
   }

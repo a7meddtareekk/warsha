@@ -45,18 +45,13 @@ class Hyundai extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CarPartsItem(
                       imagePath: 'assets/images/bosches.png',
                       text: 'Iridium Spark plugs',
                       textPartType: 'Hyundai ',
                       textPrize: '150 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);},
                     ),
                     CarPartsItem(
@@ -64,11 +59,6 @@ class Hyundai extends StatelessWidget {
                       text: 'Brake Pads',
                       textPartType: 'Hyundai ',
                       textPrize: '270 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {Navigator.pushNamed(context, BrakePads.ROUTE_NAME);},
                     ),
                   ],
@@ -77,18 +67,13 @@ class Hyundai extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CarPartsItem(
                       imagePath: 'assets/images/frontcontrolarm.png',
                       text: 'Control Arms',
                       textPartType: 'Hyundai ',
                       textPrize: '305 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {Navigator.pushNamed(context, ControlArms.ROUTE_NAME);},
                     ),
                     CarPartsItem(
@@ -96,11 +81,6 @@ class Hyundai extends StatelessWidget {
                       text: 'Shock Absborbers',
                       textPartType: 'Hyundai ',
                       textPrize: '1100 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 19,
                       press: () {Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);},
                     ),
                   ],
@@ -109,18 +89,13 @@ class Hyundai extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CarPartsItem(
                       imagePath: 'assets/images/fuelpump.png',
                       text: 'Fuel Pump',
                       textPartType: 'Hyundai ',
                       textPrize: '100 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {},
                     ),
                     CarPartsItem(
@@ -128,11 +103,6 @@ class Hyundai extends StatelessWidget {
                       text: 'Water PumP',
                       textPartType: 'Hyundai ',
                       textPrize: '100 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {},
                     ),
                   ],
@@ -141,18 +111,13 @@ class Hyundai extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CarPartsItem(
                       imagePath: 'assets/images/weelhub.png',
                       text: 'Weel Hub',
                       textPartType: 'Hyundai ',
                       textPrize: '100 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {},
                     ),
                     CarPartsItem(
@@ -160,11 +125,6 @@ class Hyundai extends StatelessWidget {
                       text: 'Tensioner Pulley',
                       textPartType: 'Hyundai ',
                       textPrize: '100 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {},
                     ),
                   ],
@@ -173,18 +133,13 @@ class Hyundai extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CarPartsItem(
                       imagePath: 'assets/images/foglight.png',
                       text: 'Fog Light',
                       textPartType: 'Hyundai ',
                       textPrize: '100 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {},
                     ),
                     CarPartsItem(
@@ -192,11 +147,6 @@ class Hyundai extends StatelessWidget {
                       text: 'Stabilizer Link',
                       textPartType: 'Hyundai ',
                       textPrize: '100 EG',
-                      imageHeight: 100,
-                      imageWidth: 100,
-                      boxHeight: 140,
-                      boxWidth: 140,
-                      sizebox: 25,
                       press: () {},
                     ),
                   ],

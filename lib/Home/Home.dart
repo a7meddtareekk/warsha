@@ -14,7 +14,7 @@ class Home extends StatefulWidget{
 
 class _HomeState extends State<Home> {
   late int selectedPage=0;
-  final  _PageOption=[HomeScreen(),Scan(),Setting()];
+  final  _PageOption=[HomeScreen(),Scan(),Cart(),Setting()];
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -38,6 +38,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: ConvexAppBar(items: [
         TabItem(icon: Icons.home,title: 'Home'),
         TabItem(icon: Icons.camera,title: 'Scan'),
+        TabItem(icon: Icons.shopping_cart,title: 'Cart'),
         TabItem(icon: Icons.settings,title: 'Settings'),
       ],
         initialActiveIndex: selectedPage,

@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:warsha/Items/CarTypeItem.dart';
 import 'package:warsha/Models/AppProvider.dart';
-
-import '../../../Home.dart';
 import 'Typs/Hyundai/Hyundai.dart';
 import 'Typs/Kia/Kia.dart';
 
@@ -29,51 +27,39 @@ class CarTypsSection extends StatelessWidget {
       body:SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          padding:EdgeInsets.only(bottom: 10),
+          padding:EdgeInsets.only(bottom: 10,left: 25,top: 10,),
           child: Column(
-            //crossAxisAlignment: CrossAxisAlignment.center,
-            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Container(
-              padding:EdgeInsets.only(left: 20,top: 20),
-              child: Row(children: [
+             Row(children: [
                 CarTypeItem(imagePath: 'assets/images/hyundai.png',text: 'Hyundai',press: (){Navigator.pushNamed(context, Hyundai.ROUTE_NAME);},),
                 CarTypeItem(imagePath: 'assets/images/kia.png',text: 'Kia',press: (){Navigator.pushNamed(context, Kia.ROUTE_NAME);},),
                 CarTypeItem(imagePath: 'assets/images/toyota.png',text: 'Toyota',press: (){},),
               ],),
-            ),
-              Container(
-                padding:EdgeInsets.only(left: 20,top: 20),
-                child: Row(children: [
+
+              Row(children: [
                 CarTypeItem(imagePath: 'assets/images/audi.png',text: 'Audi',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/bmw.png',text: 'BMW',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/honda.png',text: 'HONDA',press: (){},),
             ],),
-              ),
-              Container(
-                padding:EdgeInsets.only(left: 20,top: 20),
-                child: Row(children: [
+
+               Row(children: [
                 CarTypeItem(imagePath: 'assets/images/mazda.png',text: 'Mazda',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/mercedes.png',text: 'Mercedes',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/minicooper.png',text: 'Minicooper',press: (){},),
             ],),
-              ),
-              Container(
-                padding:EdgeInsets.only(left: 20,top: 20),
-                child: Row(children: [
+
+               Row(children: [
                 CarTypeItem(imagePath: 'assets/images/mitsubishi.png',text: 'Mitsubishi',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/nissan.png',text: 'Nissan',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/opel.png',text: 'Opel',press: (){},),
             ],),
-              ),
-              Container(
-                padding:EdgeInsets.only(left: 20,top: 20),
-                child: Row(children: [
+
+             Row(children: [
                 CarTypeItem(imagePath: 'assets/images/peugeot.png',text: 'Peugeot',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/skoda.png',text: 'Skoda',press: (){},),
                 CarTypeItem(imagePath: 'assets/images/volkswagen.png',text: 'Volkswagen',press: (){},),
             ],),
-              ),
+
           ],
           ),
         ),

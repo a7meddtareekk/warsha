@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../Models/AppProvider.dart';
+import 'package:warsha/Models/AppProvider.dart';
 import 'SignIn/buildSignInScreen.dart';
 import 'SignUp/buildSignUpScreen.dart';
 

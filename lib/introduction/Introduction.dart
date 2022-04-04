@@ -45,6 +45,8 @@ class _IntroductionState extends State<Introduction> {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/background.png"),
@@ -70,18 +72,20 @@ class _IntroductionState extends State<Introduction> {
                               borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(80),
                                   bottomLeft: Radius.circular(80))),
-                          child: PageView.builder(
-                            controller: _controller,
-                            itemCount: introdata.length,
-                            onPageChanged: (value) {
-                              setState(() {
-                                currentPage = value;
-                              });
-                            },
-                            itemBuilder: (context, index) =>
-                                IntroductionContent(
-                              image: introdata[index]["image"]!,
-                              text: introdata[index]["text"]!,
+                          child: Container(
+                            child: PageView.builder(
+                              controller: _controller,
+                              itemCount: introdata.length,
+                              onPageChanged: (value) {
+                                setState(() {
+                                  currentPage = value;
+                                });
+                              },
+                              itemBuilder: (context, index) =>
+                                  IntroductionContent(
+                                image: introdata[index]["image"]!,
+                                text: introdata[index]["text"]!,
+                              ),
                             ),
                           ))),
                   Expanded(
