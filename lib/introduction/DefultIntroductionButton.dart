@@ -17,7 +17,7 @@ class DefultIntroductionButton extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         height:double.infinity ,
-        child: FlatButton(
+        child: MaterialButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(80),

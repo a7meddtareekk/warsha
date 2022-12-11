@@ -8,14 +8,14 @@ import 'package:warsha/DatabaseHelper/DataBaseHelper.dart';
 import 'package:warsha/Home/Home.dart';
 import '../SignUp/buildSignUpScreen.dart';
 
-class buildSignInScreen extends StatefulWidget{
+class buildSignInScreen extends StatefulWidget {
   static final ROUTE_NAME = 'buildSignIpScreen';
+
   @override
   _buildSignInScreenState createState() => _buildSignInScreenState();
 }
 
 class _buildSignInScreenState extends State<buildSignInScreen> {
-
   final _formKey = GlobalKey<FormState>();
   String? email;
   String? password;
@@ -54,11 +54,17 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             buildEmailFormField(),
-            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             buildPasswordFormField(),
-            SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
+            ),
             Row(
               children: [
                 Checkbox(
@@ -70,21 +76,21 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
                     }),
                 Text(
                   'Remember Me ',
-                  style: TextStyle(
-                      fontSize: 11,
-                      color: MyThemeData.Shadow),
+                  style: TextStyle(fontSize: 11, color: MyThemeData.Shadow),
                 )
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.04,),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                FlatButton(
+                MaterialButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        )),
+                      Radius.circular(20),
+                    )),
                     color: MyThemeData.MainColor,
                     onPressed: () {
                       LogIn();
@@ -100,6 +106,7 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
       ),
     );
   }
+
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
@@ -125,11 +132,14 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
       decoration: InputDecoration(
         border: new OutlineInputBorder(
           borderRadius: new BorderRadius.circular(25.0),
-          borderSide: new BorderSide(),),
+          borderSide: new BorderSide(),
+        ),
         labelText: "Email",
         labelStyle: TextStyle(color: MyThemeData.Black),
         hintText: "Enter your email",
-        hintStyle: TextStyle(fontSize: 11,),
+        hintStyle: TextStyle(
+          fontSize: 11,
+        ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -160,56 +170,61 @@ class _buildSignInScreenState extends State<buildSignInScreen> {
       decoration: InputDecoration(
         border: new OutlineInputBorder(
           borderRadius: new BorderRadius.circular(25.0),
-          borderSide: new BorderSide(),),
+          borderSide: new BorderSide(),
+        ),
         labelText: "Password",
         labelStyle: TextStyle(color: MyThemeData.Black),
         hintText: "Enter your password",
-        hintStyle: TextStyle(fontSize: 11,),
+        hintStyle: TextStyle(
+          fontSize: 11,
+        ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
   }
 
-  void LogIn(){
+  void LogIn() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       LogInData();
     }
   }
 
-  void LogInData ()async{
+  void LogInData() async {
     try {
-      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email:email!,
-          password: password!
-      );
-      if (userCredential.user==null ){
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email!, password: password!);
+      if (userCredential.user == null) {
         showErrorMessage('invalid email or password');
-      }else{
-       final userRef = getUserCollectionWithConverter().doc(userCredential.user!.uid)
-    .get()
-           .then((retrievedUser){
-             provider.updateUser(retrievedUser.data());
-             Navigator.pushReplacementNamed(context, Home.ROUTE_NAME);
-       });
+      } else {
+        final userRef = getUserCollectionWithConverter()
+            .doc(userCredential.user!.uid)
+            .get()
+            .then((retrievedUser) {
+
+          provider.updateUser(retrievedUser.data());
+          Navigator.pushReplacementNamed(context, Home.ROUTE_NAME);
+        });
       }
-    }
-
-    on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException catch (e) {
       showErrorMessage(e.message ?? '');
-    } catch(e){
-    }
+    } catch (e) {}
   }
+
   void showErrorMessage(String message) {
-    showDialog(context: context, builder: (buildContext){
-      return AlertDialog(content: Text(message),
-        actions: [TextButton(onPressed: (){
-          Navigator.pop(context);
-        }, child: Text('ok'))],
-      );
-    }
-    );
+    showDialog(
+        context: context,
+        builder: (buildContext) {
+          return AlertDialog(
+            content: Text(message),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('ok'))
+            ],
+          );
+        });
   }
-
-  }
-
+}

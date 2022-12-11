@@ -38,13 +38,14 @@ class _ProductItemState extends State<ProductItem> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(70),
           child: AppBar(
+            elevation: 1.5,
             leading: IconButton(
               icon: Icon(Icons.arrow_back, color: MyThemeData.White),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            backgroundColor: MyThemeData.MainColor,
+            backgroundColor: MyThemeData.BackgroundColor,
             shape: ContinuousRectangleBorder(
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(150),
@@ -55,7 +56,7 @@ class _ProductItemState extends State<ProductItem> {
                 Text(
                   'Auto Parts Detection ',
                   style: TextStyle(
-                      color: MyThemeData.White, fontWeight: FontWeight.bold),
+                      color: MyThemeData.MainColor, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -171,7 +172,7 @@ class _ProductItemState extends State<ProductItem> {
                         child: Container(
                         padding: EdgeInsets.only(left: 10,right: 10,top: 4,),
                         width: double.infinity,
-                        child:  FlatButton(
+                        child:  MaterialButton(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                           color: MyThemeData.MainColor,
                           child: Text('ADD TO CART ',style: TextStyle(color: Colors.white),),

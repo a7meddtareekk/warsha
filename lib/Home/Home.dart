@@ -5,6 +5,8 @@ import 'package:warsha/Home/HomeScreen/HomeScreen.dart';
 import 'package:warsha/Home/Scan/Scan.dart';
 import 'package:warsha/Home/Setting/Setting.dart';
 
+import 'Cart/Cart.dart';
+
 class Home extends StatefulWidget{
   static final ROUTE_NAME = 'Home';
 
@@ -19,17 +21,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: MyThemeData.BackgroundColor,
       appBar:PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: AppBar(
-          backgroundColor: MyThemeData.MainColor,
+          backgroundColor: MyThemeData.BackgroundColor,
           shape: ContinuousRectangleBorder(
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(150), bottomRight: Radius.circular(150))),
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(150), bottomRight: Radius.circular(150)),),
+          elevation: 1.5,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Auto Parts Detection ',style:TextStyle(color: MyThemeData.White,fontWeight: FontWeight.bold) ,),
+              Text('Auto Parts Detection ',style:TextStyle(color: MyThemeData.MainColor,fontWeight: FontWeight.bold) ,),
             ],
           ),
         ),
@@ -42,9 +44,11 @@ class _HomeState extends State<Home> {
         TabItem(icon: Icons.settings,title: 'Settings'),
       ],
         initialActiveIndex: selectedPage,
-        color: MyThemeData.MainColor,
-        backgroundColor: MyThemeData.BackgroundColor,
+
         activeColor: MyThemeData.MainColor,
+
+        color: Colors.grey,
+        backgroundColor: MyThemeData.BackgroundColor,
         onTap: (int index){
         setState(() {
           selectedPage=index;

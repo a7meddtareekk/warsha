@@ -42,7 +42,7 @@ class _RadioButtonState extends State<RadioButton> {
                     value: 4,
                     groupValue: valueee,
                     onChanged: (value) => setState(() {valueee = value as int?;}),),
-                  FlatButton(
+            MaterialButton(
                     onPressed: () {onButtonClick();},
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15),)),
                     child: Text("Show More Details", style: TextStyle(color: MyThemeData.White),),

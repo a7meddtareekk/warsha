@@ -8,7 +8,6 @@ import 'package:warsha/Home/HomeScreen/SpecialForYou/JzEngine.dart';
 import 'package:warsha/Home/HomeScreen/SpecialForYou/RbEngine.dart';
 import 'package:warsha/Items/CarPartsItem.dart';
 import 'package:warsha/Items/SpecialForYouItem.dart';
-import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Items/CarTypeItem.dart';
 import 'package:warsha/Models/SectionTitle.dart';
 import 'CarTyps/CarTypsSection/Typs/Hyundai/Hyundai.dart';
@@ -19,7 +18,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyThemeData.BackgroundColor,
+
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(

@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,6 @@ class _MachineLearningVisionState extends State<MachineLearningVision> {
           backgroundColor:Colors.white ,
           child:Icon(Icons.add,color: MyThemeData.MainColor,),
         ),
-        backgroundColor: MyThemeData.BackgroundColor,
         body:Container(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -45,13 +45,27 @@ class _MachineLearningVisionState extends State<MachineLearningVision> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _image == null ? Container() : Image.file(_image!),
+                _image == null ? Container() : Image.file(_image!,width: double.infinity,height: 310,),
                 const SizedBox(height: 20,),
                 Text(result,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16.0,),),
-                _image == null ? Container() :RadioButton(),
+                _image == null ? Container() :MaterialButton(
+                  onPressed: () {
+                    if (result=="0 brake pads")
+                      Navigator.pushNamed(context, BrakePads.ROUTE_NAME);
+                    else if (result=="1 Control Arms")
+                      Navigator.pushNamed(context, ControlArms.ROUTE_NAME);
+                    else if (result=="2 Iridium Spark plugs")
+                      Navigator.pushNamed(context, IridiumSparkPlugs.ROUTE_NAME);
+                    else if (result=="3 Shock Absborber")
+                      Navigator.pushNamed(context, ShockAbsorber.ROUTE_NAME);
+
+                      },
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15),)),
+                  child: Text("Show More Details", style: TextStyle(color: MyThemeData.White),),
+                  color: MyThemeData.MainColor,),
               ],
             ),
           ),
@@ -120,15 +134,17 @@ class _MachineLearningVisionState extends State<MachineLearningVision> {
     recognitions.forEach((re) {
       setState(() {
         print(re.toString());
-        result+=re["label"]+" "+(re["confidence"] as double).toStringAsFixed(2)+"\n";
+       // result+=re["label"]+" "+(re["confidence"] as double).toStringAsFixed(2)+"\n";
+        result+=re["label"];
+        print("result=$result");
       });
     });
   }
 
 
   showtheme(){
-      showCupertinoModalPopup(context: context, builder: (buildContext){
-        //return ShowBottomSheet();
+      showDialog(context: context, builder: (buildContext){
+
         return CupertinoModalPopup(pickFromGallery: pickImageFromGallery, pickFromCamera: pickImageFromCamera);
 
       });

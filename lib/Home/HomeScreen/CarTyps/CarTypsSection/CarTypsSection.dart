@@ -14,15 +14,16 @@ class CarTypsSection extends StatelessWidget {
     return Scaffold(
       backgroundColor: MyThemeData.BackgroundColor,
       appBar: AppBar(
+        elevation: 1.5,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: MyThemeData.White),
           onPressed: () {Navigator.pop(context);},
         ),
-        backgroundColor: MyThemeData.MainColor,
+        backgroundColor: MyThemeData.BackgroundColor,
         title:Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Auto Parts Detection ',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold) ,),
+            Text('Auto Parts Detection ',style:TextStyle(color: MyThemeData.MainColor,fontWeight: FontWeight.bold) ,),
           ],),),
       body:SingleChildScrollView(
         scrollDirection: Axis.vertical,

@@ -84,7 +84,7 @@ class _buildSignUpScreenState extends State<buildSignUpScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                FlatButton(
+                MaterialButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),

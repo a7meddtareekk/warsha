@@ -8,6 +8,7 @@ import 'package:warsha/Models/AppProvider.dart';
 import 'package:warsha/Home/Home.dart';
 import 'package:warsha/Models/RadioButton.dart';
 import 'package:warsha/Registeration/SignIn/buildSignInScreen.dart';
+import 'Home/Cart/Cart.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/CarTypsSection.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Hyundai.dart';
 import 'Home/HomeScreen/CarTyps/CarTypsSection/Typs/Hyundai/Products/IridiumSparkPlugs.dart';
@@ -55,10 +56,12 @@ class MyApp extends StatelessWidget {
             JzEngine.ROUTE_NAME: (context) => JzEngine(),
             RbEngine.ROUTE_NAME: (context) => RbEngine(),
             RadioButton.ROUTE_NAME: (context) => RadioButton(),
+            Cart.ROUTE_NAME: (context) => Cart(),
             MachineLearningVision.ROUTE_NAME: (context) => MachineLearningVision(),
 
           },
-          initialRoute: Introduction.ROUTE_NAME,
+           initialRoute: Introduction.ROUTE_NAME,
+
 
         );
       },

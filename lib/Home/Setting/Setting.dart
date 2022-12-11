@@ -16,7 +16,6 @@ class _SettingState extends State<Setting> {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<AppProvider>(context);
     return Scaffold(
-      backgroundColor: MyThemeData.BackgroundColor,
       body: Container(
         padding: EdgeInsets.only(left: 5,right: 5),
         child: SingleChildScrollView(
@@ -36,24 +35,24 @@ class _SettingState extends State<Setting> {
               SizedBox(
                 height: 60,
               ),
-               GestureDetector(
-                 onTap: (){ShowAppthem();},
-                 child: Container(
-                    padding: EdgeInsets.only(left: 10),
-                      height: 35,
-                      margin: EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: MyThemeData.MainColor,width: 0.7),
-                        color: MyThemeData.White,),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                       themeProvider.IsDarkModeEnabled()?Text('Dark'):Text('Light'),
-                        Icon(Icons.arrow_drop_down)
-                    ],),
-                  ),
-               ),
+               // GestureDetector(
+               //   onTap: (){ShowAppthem();},
+               //   child: Container(
+               //      padding: EdgeInsets.only(left: 10),
+               //        height: 35,
+               //        margin: EdgeInsets.all(3),
+               //        decoration: BoxDecoration(
+               //          borderRadius: BorderRadius.circular(10),
+               //          border: Border.all(color: MyThemeData.MainColor,width: 0.7),
+               //          color: MyThemeData.White,),
+               //      child: Row(
+               //        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               //        children: [
+               //         themeProvider.IsDarkModeEnabled()?Text('Dark'):Text('Light'),
+               //          Icon(Icons.arrow_drop_down)
+               //      ],),
+               //    ),
+               // ),
 
               Container(
                 padding: EdgeInsets.only(left: 10, right: 10),

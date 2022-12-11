@@ -9,17 +9,20 @@ class AppTheme extends StatelessWidget{
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           GestureDetector(
               onTap: (){
                 if(themeProvider.IsDarkModeEnabled())
                   themeProvider.toggleTheme();
+                Navigator.pop(context);
               },
               child: getRow('Light', !themeProvider.IsDarkModeEnabled())),
           GestureDetector(
               onTap: (){
                 if(!themeProvider.IsDarkModeEnabled())
                   themeProvider.toggleTheme();
+                Navigator.pop(context);
               },
               child: getRow('Dark', themeProvider.IsDarkModeEnabled())),
 
